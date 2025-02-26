@@ -393,6 +393,7 @@ class Application:
         self.caption_name_dict: dict = {}
         self.caption_entities_dict: dict = {}
         self.max_concurrent_transmissions: int = 1
+        self.enable_web: bool = True
         self.web_host: str = "0.0.0.0"
         self.web_port: int = 5000
         self.max_download_task: int = 5
@@ -486,6 +487,7 @@ class Application:
         self.file_name_prefix_split = _config.get(
             "file_name_prefix_split", self.file_name_prefix_split
         )
+        self.enable_web = _config.get("enable_web", self.enable_web)
         self.web_host = _config.get("web_host", self.web_host)
         self.web_port = _config.get("web_port", self.web_port)
 

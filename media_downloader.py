@@ -659,7 +659,8 @@ def main():
     )
     try:
         app.pre_run()
-        init_web(app)
+        if app.enable_web: 
+            init_web(app)
 
         set_max_concurrent_transmissions(client, app.max_concurrent_transmissions)
 
